@@ -1,7 +1,7 @@
 class Animal
 
   attr_accessor :weight
-  attr_reader :species, :nickname
+  attr_reader :species, :nickname, :zoo
 
   @@all_animals = []
 
@@ -17,8 +17,8 @@ class Animal
     @@all_animals
   end
 
-  def zoo
-
-  end
+  # def zoo
+  #   @zoo
+  # end
 
 end

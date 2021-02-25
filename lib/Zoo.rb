@@ -22,7 +22,7 @@ class Zoo
   end
 
   def animals
-    
+    Animal.all.collect { |animal| animal.zoo.object_id == self.object_id }
   end
 end
 
