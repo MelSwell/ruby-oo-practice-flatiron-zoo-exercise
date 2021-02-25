@@ -22,8 +22,25 @@ class Zoo
   end
 
   def animals
-    Animal.all.collect { |animal| animal.zoo.object_id == self.object_id }
+    Animal.all.select { |animal| animal.zoo.object_id == self.object_id }
   end
+
+  def animal_species
+    animals.collect { |animal| animal.species }.uniq!
+  end
+
+  def find_by_species(species)
+    animals.select { |animal| animal.species == species }
+  end
+
+  def find_by_nickname(nickname)
+    animals.select { |animal| animal.nickname == nickname }
+  end
+
+  def self.find_by_location(location)
+    all.select { |zoo| zoo.location == location }
+  end
+
 end
 
 
