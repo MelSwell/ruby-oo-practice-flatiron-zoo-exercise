@@ -37,6 +37,10 @@ class Zoo
     animals.select { |animal| animal.nickname == nickname }
   end
 
+  def animal_nicknames
+    animals.collect { |animal| animal.nickname }
+  end
+
   def self.find_by_location(location)
     all.select { |zoo| zoo.location == location }
   end
